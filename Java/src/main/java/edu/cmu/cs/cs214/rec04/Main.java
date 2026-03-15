@@ -9,39 +9,32 @@ public class Main {
 
     public static void main(String[] args) {
 
-        /** 
-         * This is a sandbox to experiment in.
-         * Uncomment the following code to play with your implementation 
-         * Select all and (CTRL + /) or (COMMAND + /)
-         * Feel free to write more to test your implementation. 
-         * */
+        // Өөрийн хэрэгжүүлсэн классуудыг зарлах
+        DelegationSortedIntList list1 = new DelegationSortedIntList();
+        InheritanceSortedIntList list2 = new InheritanceSortedIntList();
 
-        // IntegerList list1;
-        // SortedIntList list2;
+        // Эхний жагсаалтад 5 элемент нэмэх
+        list1.add(1);
+        list1.add(3);
+        list1.add(2);
+        list1.add(4);
+        list1.add(2);
 
-        // list1 = new DelegationSortedIntList();
-        // list2 = new InheritanceSortedIntList();
+        // Жагсаалтыг хэвлэх (Энд printList ашиглагдаж байгаа тул сануулга арилна)
+        System.out.print("List 1 (Delegation): ");
+        printList(list1);
+        System.out.println("Total added to List 1: " + list1.getTotalAdded());
 
-        // // add 5 elements to our first list.
-        // list1.add(1);
-        // list1.add(3);
-        // list1.add(2);
-        // list1.add(4);
-        // list1.add(2);
+        // Хоёр дахь жагсаалтад 2 элемент нэмэх
+        list2.add(3);
+        list2.add(0);
 
-        // printList(list1);
-        // System.out.println(list1.getTotalAdded());
+        // Эхний жагсаалтыг (5 элемент) хоёр дахь жагсаалт руу (2 элемент) нэмэх
+        list2.addAll(list1);
 
-        // // add 2 elements to a second list.
-        // list2.add(3);
-        // list2.add(0);
-
-
-        // // add the first list (5 elements) to our second list (2 elements).
-        // list2.addAll(list1);
-
-        // printList(list2);
-        // System.out.println(list2.getTotalAdded());
+        System.out.print("List 2 (Inheritance) after addAll: ");
+        printList(list2);
+        System.out.println("Total added to List 2: " + list2.getTotalAdded());
     }
 
     /**
